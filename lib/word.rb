@@ -6,7 +6,7 @@ class Word
   def initialize(word)
     @word = word
     @definitions = []
-    @image = nil
+    @image = "https://www.baker.edu/wp-content/plugins/ajax-search-pro/img/default.jpg"
     @id = @@words.length + 1
     @match_counter = 0
     @@words.push(self)
