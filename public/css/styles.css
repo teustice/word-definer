@@ -1,0 +1,47 @@
+#nav-title {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.add-word {
+  display: inline-block;
+  float: right;
+  margin-right: 4%;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.all-display ol{
+  margin-top: 20px;
+}
+
+
+.nav-links {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 20px;
+  float: right;
+}
+
+.word-img {
+  height: 40vh;
+  width: auto;
+  display: block;
+}
+
+.tiny-img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tiny-container {
+  padding-right: 0px;
+  text-align: center;
+}
+
+.tiny-container, .word-list {
+  margin-top: 10px;
+}

@@ -1,10 +1,12 @@
-<h1>Word Definer</h1>
-
-<h3>Here are your words:</h3>
-
-<a href="/word_form"><button class="btn btn-success">Add a word</button></a>
-<ul>
-  <% @words.each do |word| %>
-    <a href="/word/<%= word.id %>"><h5><%= word.word %></h5></a>
-  <%end%>
-</ul>
+<h3>Here are your words: <a href="/word_form"><button class="add-word btn btn-danger">Add a word</button></a></h3>
+<% @words.each do |word| %>
+<div class="row">
+  <div class="tiny-container col-md-1">
+    <img class="tiny-img" src="<%=word.image%>" alt="">
+  </div>
+  <div class="word-list col-md-2">
+    <a href="/word/<%= word.id %>"><h4><%= word.word %></h4></a>
+  </div>
+</div>
+<hr>
+<%end%>

@@ -1,11 +1,14 @@
 <h1> <%= Word.get_working_word.word %></h1>
-<img src="<%= Word.get_working_word.image %>">
-<a href="/image_form"><button class="btn btn-success">Add an image</button></a>
-<a href="/definition_form"><button class="btn btn-success">Add a definition</button></a>
+
+<img class="word-img" src="<%= Word.get_working_word.image %>">
 
 <h3>Definitions:</h3>
-<ul>
+<ol>
   <% Word.get_working_word.definitions.each do |single_def| %>
-    <h5><%= single_def.definition %></h5>
+    <li><%= single_def.definition %></li>
   <%end%>
-</ul>
+</ol>
+
+<hr>
+<a href="/image_form"><button class="btn btn-success">Add an image</button></a>
+<a href="/definition_form"><button class="btn btn-success">Add a definition</button></a>

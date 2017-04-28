@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Word Definer</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link  rel='stylesheet' href="/css/styles.css" >
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -9,8 +9,13 @@
   </head>
   <body>
     <div class="container">
-    <a href='/'><h5>Home</h5></a>
-    <hr>
+      <div class="navbar">
+        <h3 id="nav-title">Word Definer</h3>
+        <a class="nav-links" href='/all_words'><h5>Your Dictionary</h5></a>
+        <a class="nav-links" href='/'><h5>Home</h5></a>
+
+        <hr>
+      </div>
       <%= yield %>
     </div>
   </body>

@@ -46,3 +46,7 @@ post('/image_form') do
   Word.get_working_word.image = img_url
   redirect('/word/' + Word.get_working_word.id.to_s)
 end
+
+get('/all_words') do
+  erb(:all_words)
+end
