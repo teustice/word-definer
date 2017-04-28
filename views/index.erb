@@ -1,4 +1,8 @@
-<h3>Here are your words: <a href="/word_form"><button class="add-word btn btn-danger">Add a word</button></a></h3>
+<h3>Here are your words:
+  <a href="/word_form">
+    <button class="add-word btn btn-danger">Add a word</button>
+  </a>
+</h3>
 <% @words.each do |word| %>
 <div class="row">
   <div class="tiny-container col-md-1">
@@ -10,3 +14,7 @@
 </div>
 <hr>
 <%end%>
+
+<form action="/test_data" method="post">
+  <button class="btn btn-default">Load Test Data</button>
+</form>
