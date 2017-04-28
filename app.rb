@@ -36,3 +36,13 @@ post('/definition_form')do
   Word.get_working_word.store_definition(Definition.new(definition))
   redirect('/word/' + Word.get_working_word.id.to_s)
 end
+
+get('/image_form') do
+  erb(:image_form)
+end
+
+post('/image_form') do
+  img_url = params.fetch('image')
+  Word.get_working_word.image = img_url
+  redirect('/word/' + Word.get_working_word.id.to_s)
+end

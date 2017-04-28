@@ -1,11 +1,12 @@
 class Word
-  attr_accessor(:word, :definitions, :id)
+  attr_accessor(:word, :definitions, :image, :id)
   @@words = []
   @@working_word = nil
 
   def initialize(word)
     @word = word
     @definitions = []
+    @image = nil
     @id = @@words.length + 1
     @@words.push(self)
   end
