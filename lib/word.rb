@@ -1,5 +1,5 @@
 class Word
-  attr_accessor(:word, :definitions, :image, :id)
+  attr_accessor(:word, :definitions, :image, :id, :match_counter)
   @@words = []
   @@working_word = nil
 
@@ -8,6 +8,7 @@ class Word
     @definitions = []
     @image = nil
     @id = @@words.length + 1
+    @match_counter = 0
     @@words.push(self)
   end
 
@@ -21,6 +22,23 @@ class Word
 
   def Word.get_working_word
     @@working_word
+  end
+
+  def Word.search(query)
+    query_char_array = query.split("")
+    @@words.each do |word|
+      @match_counter = 0
+      word_char_array = word.word.split("")
+      word_char_array.each do |word_letter|
+        query_char_array.each do |query_letter|
+          if word_letter == query_letter
+            @match_counter += 1
+          end
+        end
+      end
+    end
+    sorted_words = @@words.sort_by { |word| word.match_counter}
+    sorted_words.reverse
   end
 
   def Word.store_working_word(word)

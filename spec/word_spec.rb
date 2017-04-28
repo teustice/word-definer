@@ -16,7 +16,7 @@ describe(Word) do
 
     it("pushes the word into a class variable") do
       Word.new("candle")
-      expect(Word.all[0]).to(eq("candle"))
+      expect(Word.all[0].word).to(eq("candle"))
     end
   end
 
@@ -25,6 +25,15 @@ describe(Word) do
       new_word = Word.new("candle")
       new_word.store_definition(Definition.new("A wax cylinder"))
       expect(new_word.definitions[0].definition).to(eq("A wax cylinder"))
+    end
+  end
+
+  describe("Word.search") do
+    it("returns a list sorted by most character matches in the words array") do
+      Word.new("candle")
+      Word.new("flashlight")
+      Word.new("salad")
+      expect(Word.search("sal")[0].word).to(eq("salad"))
     end
   end
 end

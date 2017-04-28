@@ -3,6 +3,9 @@
   margin-bottom: 0px;
 }
 
+.btn-success {
+  margin-top: 10px;
+}
 .add-word {
   display: inline-block;
   float: right;
