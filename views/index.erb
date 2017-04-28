@@ -3,7 +3,8 @@
 <h3>Here are your words:</h3>
 
 <a href="/word_form"><button class="btn btn-success">Add a word</button></a>
-
-<% @words.each do |word| %>
-  <% word.word %>
-<%end%>
+<ul>
+  <% @words.each do |word| %>
+    <a href="/word/<%= word.id %>"><h5><%= word.word %></h5></a>
+  <%end%>
+</ul>

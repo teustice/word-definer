@@ -1,0 +1,9 @@
+<h1> <%= @current_word.word %></h1>
+
+<h3>Definitions:</h3>
+
+<ul>
+  <% @current_word.definitions.each do |single_def| %>
+    <h5><%= single_def.definition %></h5><br>
+  <%end%>
+</ul>
