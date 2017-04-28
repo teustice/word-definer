@@ -51,6 +51,11 @@ get('/all_words') do
   erb(:all_words)
 end
 
+post('/delete_words') do
+  Word.clear
+  redirect('/')
+end
+
 post('/test_data') do
   new_word1 = Word.new("Jean-Luc Picard")
   new_word1.image = "https://upload.wikimedia.org/wikipedia/en/2/20/Captain_Picard_Chair.jpg"
