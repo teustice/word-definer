@@ -28,7 +28,7 @@ class Word
     query_char_array = query.split("")
     @@words.each do |word|
       word.match_counter = 0
-      word_char_array = word.word.split("")
+      word_char_array = word.word.downcase.split("")
       word_char_array.each do |word_letter|
         query_char_array.each do |query_letter|
           if word_letter == query_letter
