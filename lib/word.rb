@@ -15,4 +15,15 @@ class Word
   def Word.clear
     @@words = []
   end
+
+  def store_definition(definition)
+    @definitions.push(definition)
+  end
+end
+
+class Definition
+  attr_accessor(:definition)
+  def initialize(definition)
+    @definition = definition
+  end
 end
