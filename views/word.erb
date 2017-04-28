@@ -1,9 +1,10 @@
-<h1> <%= @current_word.word %></h1>
+<h1> <%= Word.get_working_word.word %></h1>
 
 <h3>Definitions:</h3>
+<a href="/definition_form"><button class="btn btn-success">Add a definition</button></a>
 
 <ul>
-  <% @current_word.definitions.each do |single_def| %>
-    <h5><%= single_def.definition %></h5><br>
+  <% Word.get_working_word.definitions.each do |single_def| %>
+    <h5><%= single_def.definition %></h5>
   <%end%>
 </ul>

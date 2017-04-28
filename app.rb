@@ -23,6 +23,16 @@ post('/word_form') do
 end
 
 get('/word/:id') do
-  @current_word = Word.find(params.fetch('id').to_i)
+  Word.store_working_word(Word.find(params.fetch('id').to_i))
   erb(:word)
+end
+
+get('/definition_form') do
+  erb(:definition_form)
+end
+
+post('/definition_form')do
+  definition = params.fetch('definition')
+  Word.get_working_word.store_definition(Definition.new(definition))
+  redirect('/word/' + Word.get_working_word.id.to_s)
 end
