@@ -31,7 +31,7 @@ class Word
       word_char_array = word.word.downcase.split("")
       word_char_array.each do |word_letter|
         query_char_array.each do |query_letter|
-          if word_letter == query_letter
+          if word_letter == query_letter || word_letter.upcase == query_letter
             word.match_counter += 1
           end
         end
