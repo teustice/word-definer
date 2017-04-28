@@ -3,6 +3,12 @@
     <button class="add-word btn btn-danger">Add a word</button>
   </a>
 </h3>
+
+<form action="/search" method="post">
+  <input type="text" name="search">
+  <button class="btn btn-default" type="submit">Search</button>
+</form>
+
 <% @words.each do |word| %>
 <div class="row">
   <div class="tiny-container col-md-1">

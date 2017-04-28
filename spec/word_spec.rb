@@ -33,7 +33,8 @@ describe(Word) do
       Word.new("candle")
       Word.new("flashlight")
       Word.new("salad")
-      expect(Word.search("sal")[0].word).to(eq("salad"))
+      Word.new("money")
+      expect(Word.search("salad")[0].word).to(eq("salad"))
     end
   end
 end

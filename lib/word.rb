@@ -27,18 +27,18 @@ class Word
   def Word.search(query)
     query_char_array = query.split("")
     @@words.each do |word|
-      @match_counter = 0
+      word.match_counter = 0
       word_char_array = word.word.split("")
       word_char_array.each do |word_letter|
         query_char_array.each do |query_letter|
           if word_letter == query_letter
-            @match_counter += 1
+            word.match_counter += 1
           end
         end
       end
     end
-    sorted_words = @@words.sort_by { |word| word.match_counter}
-    sorted_words.reverse
+    sorted_words = @@words.sort { |a, b|  b.match_counter <=> a.match_counter }
+    sorted_words
   end
 
   def Word.store_working_word(word)

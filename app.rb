@@ -51,7 +51,7 @@ get('/all_words') do
   erb(:all_words)
 end
 
-post '/test_data' do
+post('/test_data') do
   new_word1 = Word.new("Jean-Luc Picard")
   new_word1.image = "https://upload.wikimedia.org/wikipedia/en/2/20/Captain_Picard_Chair.jpg"
   new_word1.definitions.push(Definition.new("Captain of the starship 'Enterprise'"))
@@ -68,4 +68,10 @@ post '/test_data' do
   new_word4.image = "https://upload.wikimedia.org/wikipedia/en/e/e6/WesleyCrusher2366.jpg"
   new_word4.definitions.push(Definition.new("Ensign on the starship Enterprise"))
   redirect('/')
+end
+
+post('/search') do
+  query = params.fetch('search')
+  @words = Word.search(query)
+  erb(:index)
 end
